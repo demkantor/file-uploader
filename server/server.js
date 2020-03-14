@@ -10,6 +10,17 @@ app.use(bodyParser.json()); // needed for angular requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 
+
+// Route includes
+const imageRouter = require('./routes/image.router');
+
+
+// Serve static files
+app.use(express.static('build'));
+
+
+/** ---------- ROUTES ---------- **/
+app.use('/api/image', imageRouter);
 // Upload Endpoint
 app.post('/upload', (req, res) => {
   console.log('in /upload/POST');
@@ -28,6 +39,7 @@ app.post('/upload', (req, res) => {
     res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
   });
 });
+
 
 
 /** ---------- START SERVER ---------- **/
