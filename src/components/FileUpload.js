@@ -17,11 +17,13 @@ const FileUpload = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
+    console.log('submitting image....')
     const formData = new FormData();
     formData.append('file', file);
 
     try {
       const res = await axios.post('/upload', formData, {
+        
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -31,12 +33,12 @@ const FileUpload = () => {
               Math.round((progressEvent.loaded * 100) / progressEvent.total)
             )
           );
-
+          console.log('in axios/post to server');
           // Clear percentage
           setTimeout(() => setUploadPercentage(0), 10000);
         }
       });
-
+      console.log('response:', res.data);
       const { fileName, filePath } = res.data;
 
       setUploadedFile({ fileName, filePath });
