@@ -6,6 +6,10 @@ import '../App/App.css';
 
 class ReduxDisplayImages extends Component {
 
+  //bring in list of images stored on server
+  componentDidMount =()=>{
+    this.props.dispatch({ type: "GET_IMAGES" });
+  }
 
   render() {
     return (

@@ -1,8 +1,8 @@
 // stores an array of all images on server
-const allImagesReducer = (state = [], action) => {
+const allImagesReducer = (state = '', action) => {
     switch (action.type) {
         case 'SET_IMAGES':
-            return [ ...state, action.payload ];
+            return state = action.payload;
         default:
             return state;
     }

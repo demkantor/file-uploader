@@ -1,16 +1,18 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
-
+imageArray =[]
 
 
 
 // Upload new image post - send to file in server
 router.post('/', (req, res) => {
-    console.log('in /api/image/POST with:', req.files.file.name);
+    console.log('in /api/router/POST with:', req.files.file.name);
     if (req.files === null) {
       return res.status(400).json({ msg: 'No file uploaded' });
     }
+    const objectToPush = {fileName: req.files.file.name, filePath: `/uploads/${req.files.file.name}`}
+    imageArray.push(objectToPush);
     const file = req.files.file;
     file.mv(`./public/uploads/${file.name}`, err => {
       if (err) {
@@ -21,7 +23,10 @@ router.post('/', (req, res) => {
     });
   });
 
-
+  //sends array of images saved to server
+  router.get('/', (req,res)=>{
+    res.send(imageArray);
+  })
 
 
 

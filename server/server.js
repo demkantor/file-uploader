@@ -13,6 +13,7 @@ app.use(fileUpload());
 
 // Route includes
 const imageRouter = require('./routes/image.router');
+const reduxRouter = require('./routes/redux.router');
 
 
 // Serve static files
@@ -21,24 +22,25 @@ app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
 app.use('/api/image', imageRouter);
-// Upload Endpoint
-app.post('/upload', (req, res) => {
-  console.log('in /upload/POST');
-  if (req.files === null) {
-    return res.status(400).json({ msg: 'No file uploaded' });
-  }
+app.use('/api/redux', reduxRouter);
 
-  const file = req.files.file;
 
-  file.mv(`./public/uploads/${file.name}`, err => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send(err);
-    }
+// Upload Endpoint not needed if moved to routers!
+// app.post('/upload', (req, res) => {
+//   console.log('in /upload/POST');
+//   if (req.files === null) {
+//     return res.status(400).json({ msg: 'No file uploaded' });
+//   }
+//   const file = req.files.file;
+//   file.mv(`./public/uploads/${file.name}`, err => {
+//     if (err) {
+//       console.error(err);
+//       return res.status(500).send(err);
+//     }
 
-    res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
-  });
-});
+//     res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+//   });
+// });
 
 
 

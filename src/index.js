@@ -26,7 +26,7 @@ const middlewareList = process.env.NODE_ENV === 'development'
 const storeInstance = createStore(
     rootReducer,
     applyMiddleware(...middlewareList),
-  );allImagesReducer
+  );
 
 
 // rootSaga contains all of our other sagas
