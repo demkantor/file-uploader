@@ -1,28 +1,9 @@
 import axios from 'axios'
-import mainReducer from '../reducers/imageReducer';
-import {createStore,  applyMiddleware} from 'redux';
-import logger from 'redux-logger';
-
-// Imported saga middleware
 import {takeEvery, put} from "redux-saga/effects";
-import createSagaMiddleware from 'redux-saga';
-
-// Create sagaMiddlewareWelcome to the super secert awesome admin page
-const sagaMiddleware = createSagaMiddleware();
-
-// Create one store that all components can use
-const storeInstance = createStore(
-    mainReducer,
-    // Add sagaMiddleware to our store
-    applyMiddleware(sagaMiddleware, logger),
-);
-
-// Pass rootSaga into our sagaMiddleware
-sagaMiddleware.run(rootSaga);
 
 
 // these sagas take the dispatch and runs them before they get to the reducers
-function* rootSaga() {
+function* serverStoredSagas() {
     yield takeEvery('GET_IMAGES', getImages);
     yield takeEvery('ADD_IMAGE', addImage);
 }
@@ -49,11 +30,4 @@ function* addImage(image){
 }
 
 
-
-
-
-
-
-
-
-export default (sagaMiddleware, storeInstance);
+export default serverStoredSagas;

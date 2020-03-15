@@ -11,8 +11,11 @@ class Header extends Component {
         return (
             <>
             <div className="nav">
+                <Link to="/" className="navLink">Function Component Upload</Link>
                 <Link to="/imageUpload" className="navLink">Class Component Upload</Link>
                 <Link to="/reduxUpload" className="navLink">Redux Enabled Upload</Link>
+            </div>
+            <div className="nav">
                 <Link to="/reduxDisplayImages" className="navLink">Redux Display Images</Link>
             </div>
             <div className='container mt-4'>

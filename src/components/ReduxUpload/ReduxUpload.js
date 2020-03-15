@@ -68,8 +68,8 @@ class ReduxUpload extends Component {
                 {this.state.uploadedFile ? (
                     <div className='row mt-5'>
                     <div className='col-md-6 m-auto'>
-                        <h3 className='text-center'>{this.props.reduxState.oneReducer.fileName}</h3>
-                        <img style={{ width: '100%' }} src={this.props.reduxState.oneReducer.filePath} alt='' />
+                        <h3 className='text-center'>{this.props.reduxState.singleImage.fileName}</h3>
+                        <img style={{ width: '100%' }} src={this.props.reduxState.singleImage.filePath} alt='' />
                     </div>
                     </div>
                 ) : null}
