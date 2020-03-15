@@ -1,0 +1,9 @@
+body{
+    background-color: aqua;
+}
+
+.imageUpload{
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
