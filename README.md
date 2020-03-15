@@ -2,7 +2,7 @@
 
 > This is a full stack React-Express file uploader but could easily be modified to work with any back-end including cloud storage
 
-> There is often many ways to get the same effect. see how the same outcome can come about from different methods laid out in this app
+> There is often many ways to get the same effect. see how the same outcome can come about from different methods laid out in this app including using class components vs function components, using redux and sagas
 
 ## Quick Start
 

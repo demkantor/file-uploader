@@ -28,13 +28,24 @@ function* getImages(){
     yield put({type: 'SET_IMAGES', payload: imageList.data})
 }
 
-function* addImage(pic){
-    console.log('in saga images/POST with:', pic.payload);
+function* addImage(image){
+    console.log('in saga images/POST with:', image.payload);
+    const config = { headers: {'Content-Type': 'multipart/form-data'} }
     try {
-        yield axios.post('/api/image/', pic.payload);
-        yield put({type: 'GET_IMAGES'});
+        const res = yield axios.post('/api/image/', image.payload, config);
+        console.log('in saga post with res.data', res.data)
+        yield put({type: 'SET_THIS_IMAGE', payload: res.data});
     } catch(error){
         console.log('error in saga /images/POST:', error);
+    }
+}
+
+const oneReducer = (state='', action) => {
+    switch (action.type) {
+        case 'SET_THIS_IMAGE':
+            return state = action.payload;
+        default:
+            return state;
     }
 }
 
@@ -51,6 +62,7 @@ const imageReducer = (state = [], action) => {
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
+    oneReducer,
     imageReducer,
     }),
     // Add sagaMiddleware to our store

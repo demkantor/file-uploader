@@ -2,8 +2,13 @@ body{
     background-color: aqua;
 }
 
+.container{
+    display: grid;
+}
+
 .imageUpload{
     margin: auto;
+    display: flexbox;
     text-align: center;
     justify-content: center;
 }

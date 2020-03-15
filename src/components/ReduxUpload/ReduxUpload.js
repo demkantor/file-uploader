@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import Message from '../Message/Message';
 import Progress from '../Progress/Progress';
-import axios from 'axios';
 import '../App/App.css'
 
 
 
-class ImageUpload extends Component {
+class ReduxUpload extends Component {
 
     state={
         file: '',
@@ -25,54 +25,18 @@ class ImageUpload extends Component {
   
     onSubmit = async (e) => {
       e.preventDefault();
-      console.log('submitting image....')
       const formData = new FormData();
       formData.append('file', this.state.file);
-      console.log('in axios/post to server with formData:', formData);
-      try {
-        const res = await axios.post('/api/image', formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          },
-          onUploadProgress: progressEvent => {
-              this.setState({
-                  uploadPercentage: parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total))
-              });
-            // Clear percentage
-            setTimeout(() => this.setState({uploadPercentage: 0}), 10000);
-            // Clear last file name
-            setTimeout(() => this.setState({filename: 'Choose File'}), 10000);
-          }
-        });
-        console.log('res.data--response:', res.data);
-        const { fileName, filePath } = res.data;
-        this.setState({
-            uploadedFile: {
-                filename: fileName,
-                filepath: filePath
-                },
-            message: 'File Uploaded'
-        });
-      } catch (err) {
-        if (err.response.status === 500) {
-          this.setState({
-              message: 'There was a problem with the server'
-           });
-        } else {
-            this.setState({
-                message: err.response.data.msg
-             });
-        }
-      }
-    };
 
+      this.props.dispatch({ type: "ADD_IMAGE", payload: formData});
+    };
 
 
     render() {
         return (
             <div className="imageUpload">
                 <h3 className='text-center'>
-                    image will be saved to server
+                    image will be sent through Redux 
                 </h3>
                 <br/>
                 <p className='text-center' >
@@ -103,8 +67,8 @@ class ImageUpload extends Component {
                 {this.state.uploadedFile ? (
                     <div className='row mt-5'>
                     <div className='col-md-6 m-auto'>
-                        <h3 className='text-center'>{this.state.uploadedFile.filename}</h3>
-                        <img style={{ width: '100%' }} src={this.state.uploadedFile.filepath} alt='' />
+                        <h3 className='text-center'>{this.props.reduxState.oneReducer.fileName}</h3>
+                        <img style={{ width: '100%' }} src={this.props.reduxState.oneReducer.filePath} alt='' />
                     </div>
                     </div>
                 ) : null}
@@ -115,5 +79,8 @@ class ImageUpload extends Component {
     
 
     
-
-export default ImageUpload;
+    const putReduxStateOnProps = (reduxState) => ({
+        reduxState
+      });
+      
+    export default connect(putReduxStateOnProps)(ReduxUpload);
