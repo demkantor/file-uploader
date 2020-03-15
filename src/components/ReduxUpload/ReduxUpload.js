@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import Message from '../Message/Message';
 import Progress from '../Progress/Progress';
 import '../App/App.css'
+import ReduxDisplayImages from '../ReduxDisplayImages/ReduxDisplayImages';
 
 
 
@@ -72,6 +73,7 @@ class ReduxUpload extends Component {
                     </div>
                     </div>
                 ) : null}
+                <ReduxDisplayImages/>
             </div>
         );
       }

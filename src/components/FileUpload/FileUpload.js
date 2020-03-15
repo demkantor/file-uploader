@@ -63,6 +63,7 @@ const FileUpload = () => {
     <>
     <h3 className='text-center' >image will be saved to server</h3>
     <p className='text-center' >written in function component</p>
+    <p className='text-center' >no redux used, only will display last image uploaded</p>
       {message ? <Message msg={message} /> : null}
       <form onSubmit={onSubmit}>
         <div className='custom-file mb-4'>

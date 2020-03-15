@@ -4,14 +4,14 @@ import '../App/App.css';
 
 
 
-class DisplayImages extends Component {
+class ReduxDisplayImages extends Component {
 
 
   render() {
     return (
       <div className='container mt-4'>
         <h1>this will display all images sent through redux</h1>
-        <p>redux resets when server resets, keep this in mind....</p>
+        <p>redux reducers dont hold memory forever, keep this in mind....</p>
           {this.props.reduxState.imageReducer && (
               <div className="container">
                 {this.props.reduxState.imageReducer.map((pic, i )=> (
@@ -30,14 +30,8 @@ class DisplayImages extends Component {
 
 
 
-
-
-
-
-
-
 const putReduxStateOnProps = (reduxState) => ({
   reduxState
 });
 
-export default connect(putReduxStateOnProps)(DisplayImages);
+export default connect(putReduxStateOnProps)(ReduxDisplayImages);
