@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ msg }) => {
+
+
+
+const Message = ({msg}) => {
   return (
     <div className='alert alert-info alert-dismissible fade show' role='alert'>
       {msg}
+
       <button
         type='button'
         className='close'
@@ -17,8 +21,12 @@ const Message = ({ msg }) => {
   );
 };
 
+
+
 Message.propTypes = {
   msg: PropTypes.string.isRequired
 };
+
+
 
 export default Message;

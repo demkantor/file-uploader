@@ -1,7 +1,8 @@
-import React, { Fragment, useState } from 'react';
-import Message from './Message';
-import Progress from './Progress';
+import React, {useState} from 'react';
+import Message from '../Message/Message';
+import Progress from '../Progress/Progress';
 import axios from 'axios';
+
 
 const FileUpload = () => {
   const [file, setFile] = useState('');
@@ -10,10 +11,12 @@ const FileUpload = () => {
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
+
   const onChange = e => {
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name);
   };
+
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -53,8 +56,9 @@ const FileUpload = () => {
     }
   };
 
+
   return (
-    <Fragment>
+    <>
       {message ? <Message msg={message} /> : null}
       <form onSubmit={onSubmit}>
         <div className='custom-file mb-4'>
@@ -85,8 +89,10 @@ const FileUpload = () => {
           </div>
         </div>
       ) : null}
-    </Fragment>
+    </>
   );
 };
+
+
 
 export default FileUpload;

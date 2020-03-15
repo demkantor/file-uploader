@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Progress = ({ percentage }) => {
+
+
+
+
+const Progress = ({percentage}) => {
   return (
     <div className='progress'>
       <div
@@ -15,8 +19,14 @@ const Progress = ({ percentage }) => {
   );
 };
 
+
+
+
+
 Progress.propTypes = {
   percentage: PropTypes.number.isRequired
 };
+
+
 
 export default Progress;
