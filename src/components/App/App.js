@@ -4,6 +4,7 @@ import FileUpload from '../FileUpload/FileUpload';
 import ImageUpload from '../ImageUpload/ImageUpload';
 import ReduxUpload from '../ReduxUpload/ReduxUpload';
 import Header from '../Header/Header';
+import DisplayImages from '../DisplayImages/DisplayImages';
 
 
 
@@ -15,6 +16,7 @@ const App = () => (
       <FileUpload />
       <ImageUpload />
       <ReduxUpload />
+      <DisplayImages />
     </div>
   </div>
 );
