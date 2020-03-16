@@ -16,7 +16,8 @@ app.use(fileUpload());
 const imageRouter = require('./routes/image.router');
 const reduxRouter = require('./routes/redux.router');
 const postgresRouter = require('./routes/postgres.router');
-// const mongoRouter = require('./routes/mongo.router');
+// const mongoRouter = require('./routes/mongo.router');   ///// disconnecting this for now untill i figure out mongo db more
+
 
 
 // Serve static files
@@ -27,9 +28,11 @@ app.use(express.static('build'));
 app.use('/api/image', imageRouter);
 app.use('/api/redux', reduxRouter);
 app.use('/api/postgres', postgresRouter);
-// app.use('/api/mongo', mongoRouter);
+// app.use('/api/mongo', mongoRouter);   ///// disconnecting this for now untill i figure out mongo db more
 
 /** ---send postgres connection test to console -- **/
+//this was somethign cool i found, i have a username and password connected to my database (also found in pool.js)
+//comment the user name and password out if you dont use one or replace it with what you use! (here and in pool.js (in second config section))
 const client = new Client({
   host: 'localhost',
   port: 5432,
@@ -41,7 +44,7 @@ client
   .then(() => console.log('postgres database connected....'))
   .catch(err => console.error('connection error', err.stack))
 
-// Upload Endpoint - not needed if moved to routers!
+// Upload Endpoint - not needed if moved to routers! ////////
 // app.post('/upload', (req, res) => {
 //   console.log('in /upload/POST');
 //   if (req.files === null) {

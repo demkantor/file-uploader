@@ -22,7 +22,7 @@ const middlewareList = process.env.NODE_ENV === 'development'
 :
 [sagaMiddleware];
 
-
+//create that store!
 const storeInstance = createStore(
     rootReducer,
     applyMiddleware(...middlewareList),
@@ -32,6 +32,6 @@ const storeInstance = createStore(
 // rootSaga contains all of our other sagas
 sagaMiddleware.run(rootSaga);
 
-
+//connecting to app.js and beyond!
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, 
     document.getElementById('root'));

@@ -12,7 +12,8 @@ import PostgresDisplayImages from '../PostgresDisplayImages/PostgresDisplayImage
 import MongoDisplayImages from '../MongoDisplayImages/MongoDisplayImages';
 
 
-
+//this is App,js written as a functional component, sill uploading and displaying what we want just written differently
+//using FileUpload as /home so it is always displayed on load, other routes esily accesable via links in header
 
 const App = () => (
   <>

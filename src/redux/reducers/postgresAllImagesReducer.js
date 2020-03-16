@@ -1,4 +1,4 @@
-// stores an array of all images on server
+// stores an array of all images from postgres
 const postgresAllImagesReducer = (state = '', action) => {
     switch (action.type) {
         case 'SET_STORED_IMAGES':

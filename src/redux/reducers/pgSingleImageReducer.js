@@ -1,3 +1,4 @@
+//stores the image being uploaded to postgres
 const pgSingleReducer = (state = '', action) => {
     switch (action.type) {
         case 'STORE_THIS_IMAGE':

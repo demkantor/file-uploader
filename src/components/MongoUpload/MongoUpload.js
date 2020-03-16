@@ -29,7 +29,7 @@ class MongoUpload extends Component {
       const formData = new FormData();
       formData.append('file', this.state.file);
 
-      this.props.dispatch({ type: "STORE_IMAGE", payload: formData});
+      this.props.dispatch({ type: "STORE_MONGO_IMAGE", payload: formData});
     };
 
 

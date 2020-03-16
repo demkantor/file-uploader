@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import '../App/App.css'
+
 import Message from '../Message/Message';
 import Progress from '../Progress/Progress';
-import '../App/App.css'
 import ReduxDisplayImages from '../ReduxDisplayImages/ReduxDisplayImages';
 
 
@@ -17,6 +18,7 @@ class ReduxUpload extends Component {
         uploadPercentage: 0
     }
 
+    //this function is cleaner to run in form but bringing it out here makes it more visable
     onChange = (e) => {
         this.setState({
             file: e.target.files[0],
@@ -28,7 +30,7 @@ class ReduxUpload extends Component {
       e.preventDefault();
       const formData = new FormData();
       formData.append('file', this.state.file);
-
+        //send the info collected to sagas, the file object cant be read just by console logging
       this.props.dispatch({ type: "ADD_IMAGE", payload: formData});
     };
 
@@ -73,7 +75,7 @@ class ReduxUpload extends Component {
                     </div>
                     </div>
                 ) : null}
-                <ReduxDisplayImages/>
+                <ReduxDisplayImages/> 
             </div>
         );
       }

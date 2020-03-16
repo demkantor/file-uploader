@@ -21,6 +21,7 @@ if (process.env.DATABASE_URL) {
 
 } else {
     config = {
+        //remove my username and password if needed here, con and secretpass, or put in your own. i use this to connect to postgres but you do not!
         user: process.env.PG_USER || null || 'con', 
         password: process.env.DATABASE_SECRET || null || 'secretpass', 
         host: process.env.DATABASE_SERVER || 'localhost', // Server hosting the postgres database

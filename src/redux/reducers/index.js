@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
+//the below are links of all the reducer, notice how we can name them what we want here
 import images from './allImagesReducer';
-import singleImage from './singleImageReducer'
-import postgressAll from './postgresAllImagesReducer'
-import pgSingle from './pgSingleImageReducer'
+import singleImage from './singleImageReducer';
+import postgressAll from './postgresAllImagesReducer';
+import pgSingle from './pgSingleImageReducer';
+import mongoSingle from './mongoSingleImage';
+import mongoAll from './mongoAllImagesReducer';
 
 
 
@@ -16,7 +19,9 @@ const rootReducer = combineReducers({
   images, // contains server side storage of images
   singleImage,
   postgressAll,
-  pgSingle
+  pgSingle,
+  mongoSingle,
+  mongoAll
 });
 
 export default rootReducer;

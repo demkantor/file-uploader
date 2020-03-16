@@ -6,7 +6,7 @@ import '../App/App.css';
 
 class PostgresDisplayImages extends Component {
 
-  //bring in list of images stored on server
+  //bring in list of images stored in postgres made available by redux
   componentDidMount =()=>{
     this.props.dispatch({ type: "GET_STORED_IMAGES" });
   }

@@ -5,7 +5,7 @@ import axios from 'axios';
 import '../App/App.css'
 
 
-
+//this has the same outcome as FileUpload but writen as a class component, notice how state is used differently
 class ImageUpload extends Component {
 
     state={
@@ -22,7 +22,7 @@ class ImageUpload extends Component {
             filename: e.target.files[0].name
         })
     };
-  
+        //axios request is happenging right here! would there be a benifit of moving it to redux?
     onSubmit = async (e) => {
       e.preventDefault();
       console.log('submitting image....')

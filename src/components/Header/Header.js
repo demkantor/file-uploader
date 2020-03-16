@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App/App.css';
 
 
-
+//using this class component to stay visable no mater what page user is in. contains links to other components
 class Header extends Component {
 
 
