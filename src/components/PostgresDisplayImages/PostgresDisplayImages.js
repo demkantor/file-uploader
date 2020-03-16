@@ -22,7 +22,7 @@ class PostgresDisplayImages extends Component {
                   <div className="display" key={pic.id}>
                     <h4>{pic.name}</h4>
                     <p>{pic.mime_type}</p>
-                    <img className="image" alt={pic.name} src={pic.data} width="100px"/>
+                    <img className="image" alt={pic.name} src={`data:image/jpeg;base64,${pic.image}`} width="100px"/>
                   </div>
                   ))}
                 </div>

@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
 
   //sends array of images saved to server
   router.get('/', (req,res)=>{
-    const queryText = `SELECT * FROM "uploaded_images";`;
+    const queryText = `SELECT ENCODE(data, 'base64') as image, "name", "mime_type", "id" FROM "uploaded_images";`;
     pool.query(queryText)
     .then( (result) => {
         res.send(result.rows);
