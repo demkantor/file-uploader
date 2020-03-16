@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import images from './allImagesReducer';
 import singleImage from './singleImageReducer'
+import postgressAll from './postgresAllImagesReducer'
+import pgSingle from './pgSingleImageReducer'
 
 
 
@@ -12,7 +14,9 @@ import singleImage from './singleImageReducer'
 // This is what we get when we use 'state' inside of 'mapStateToProps'
 const rootReducer = combineReducers({
   images, // contains server side storage of images
-  singleImage
+  singleImage,
+  postgressAll,
+  pgSingle
 });
 
 export default rootReducer;

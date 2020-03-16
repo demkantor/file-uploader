@@ -14,9 +14,11 @@ class Header extends Component {
                 <Link to="/" className="navLink">Function Component Upload</Link>
                 <Link to="/imageUpload" className="navLink">Class Component Upload</Link>
                 <Link to="/reduxUpload" className="navLink">Redux Enabled Upload</Link>
+                <Link to="/postgresUpload" className="navLink">Redux Enabled Postgres Upload</Link>
             </div>
             <div className="nav">
                 <Link to="/reduxDisplayImages" className="navLink">Redux Display Images</Link>
+                <Link to="/postgresDisplayImages" className="navLink">Postgres Display Images</Link>
             </div>
             <div className='container mt-4'>
                 <h4 className='display-4 text-center mb-4'>

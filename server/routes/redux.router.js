@@ -1,5 +1,4 @@
 const express = require('express');
-const pool = require('../modules/pool');
 const router = express.Router();
 imageArray =[]
 
@@ -7,7 +6,7 @@ imageArray =[]
 
 // Upload new image post - send to file in server
 router.post('/', (req, res) => {
-    console.log('in /api/router/POST with:', req.files.file.name);
+    console.log('in /api/router/POST with:', req.files.file.name, 'full file:', req.files.file);
     if (req.files === null) {
       return res.status(400).json({ msg: 'No file uploaded' });
     }

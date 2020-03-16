@@ -32,8 +32,6 @@ class ReduxDisplayImages extends Component {
 }
 
 
-
-
 const putReduxStateOnProps = (reduxState) => ({
   reduxState
 });
