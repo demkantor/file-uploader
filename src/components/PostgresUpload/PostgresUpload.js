@@ -34,6 +34,8 @@ class PostgresUpload extends Component {
 
 
     render() {
+       
+        // const newImage = Buffer.from(this.props.reduxState.pgSingle.image).toString("base64");
         return (
             <div className="imageUpload">
                 <h3 className='text-center'>
@@ -69,7 +71,7 @@ class PostgresUpload extends Component {
                     <div className='row mt-5'>
                     <div className='col-md-6 m-auto'>
                         <h3 className='text-center'>{this.props.reduxState.pgSingle.name}</h3>
-                        <img style={{ width: '100%' }} src={this.props.reduxState.pgSingle.data} alt={this.props.reduxState.pgSingle.name} />
+                        <img style={{ width: '100%' }} src={`data:image/jpeg;base64,${this.props.reduxState.pgSingle.image}`} alt={this.props.reduxState.pgSingle.name} />
                     </div>
                     </div>
                 ) : null}

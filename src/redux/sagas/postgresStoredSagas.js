@@ -22,7 +22,7 @@ function* addImage(image){
     try {
         const res = yield axios.post('/api/postgres', image.payload, config);
         console.log('in saga post with res.data', res.data)
-        yield put({type: 'STORE_THIS_IMAGE', payload: image.payload});
+        yield put({type: 'STORE_THIS_IMAGE', payload: res.data});
         yield put({type: 'GET_STORED_IMAGES'});
     } catch(error){
         console.log('error in saga /images/POST:', error);

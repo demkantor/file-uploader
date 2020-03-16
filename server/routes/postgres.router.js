@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
     const file = req.files.file;
     const queryText = `INSERT INTO "uploaded_images" ("data", "name", "mime_type") VALUES ($1, $2, $3)`;
     pool.query(queryText, [file.data, file.name, file.mimetype])
-    .then(() => { res.sendStatus(201); })
+    .then(() => { res.status(201).json({ name: file.name, fileType: file.mimetype, image: file.data }); })
     .catch((err) => {
       console.log('Error completing new postgres post', err);
       res.sendStatus(500);
