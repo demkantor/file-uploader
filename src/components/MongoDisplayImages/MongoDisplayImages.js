@@ -4,18 +4,18 @@ import '../App/App.css';
 
 
 
-class PostgresDisplayImages extends Component {
+class MongoDisplayImages extends Component {
 
   //bring in list of images stored on server
   componentDidMount =()=>{
-    this.props.dispatch({ type: "GET_STORED_IMAGES" });
+    this.props.dispatch({ type: "GET_MONGO_IMAGES" });
   }
 
   render() {
     return (
       <div className='container'>
-        <h1 className='text-center'>Displays images from Postgres sent through redux</h1>
-        <p className='text-center'>Postgres stores images more permanently than on server alone</p>
+        <h1 className='text-center'>Displays images from MongoDB sent through redux</h1>
+        <p className='text-center'>MongoDB stores images more permanently than on server alone</p>
           {this.props.reduxState.postgressAll && (
               <div className="gridContainer">
                 {this.props.reduxState.postgressAll.map(pic => (
@@ -36,4 +36,4 @@ const putReduxStateOnProps = (reduxState) => ({
     reduxState
   });
   
-  export default connect(putReduxStateOnProps)(PostgresDisplayImages);
+  export default connect(putReduxStateOnProps)(MongoDisplayImages);

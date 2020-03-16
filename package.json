@@ -7,6 +7,7 @@
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6",
+    "mongoose": "^5.9.4",
     "pg": "^7.18.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

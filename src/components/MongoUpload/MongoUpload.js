@@ -3,11 +3,11 @@ import {connect} from 'react-redux';
 import Message from '../Message/Message';
 import Progress from '../Progress/Progress';
 import '../App/App.css'
-import PostgresDisplayImages from '../PostgresDisplayImages/PostgresDisplayImages';
+import MongoDisplayImages from '../MongoDisplayImages/MongoDisplayImages';
 
 
 
-class PostgresUpload extends Component {
+class MongoUpload extends Component {
 
     state={
         file: '',
@@ -39,7 +39,7 @@ class PostgresUpload extends Component {
         return (
             <div className="imageUpload">
                 <h3 className='text-center'>
-                    image will be sent through Redux and be stored in a Postgres database
+                    Image will be sent through Redux and be stored in a MongoDB database
                 </h3>
                 <br/>
                 <p className='text-center' >
@@ -75,7 +75,7 @@ class PostgresUpload extends Component {
                     </div>
                     </div>
                 ) : null}
-                <PostgresDisplayImages/>
+                <MongoDisplayImages/>
             </div>
         );
       }
@@ -87,4 +87,4 @@ class PostgresUpload extends Component {
         reduxState
       });
       
-    export default connect(putReduxStateOnProps)(PostgresUpload);
+    export default connect(putReduxStateOnProps)(MongoUpload);

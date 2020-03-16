@@ -16,6 +16,7 @@ app.use(fileUpload());
 const imageRouter = require('./routes/image.router');
 const reduxRouter = require('./routes/redux.router');
 const postgresRouter = require('./routes/postgres.router');
+// const mongoRouter = require('./routes/mongo.router');
 
 
 // Serve static files
@@ -26,6 +27,7 @@ app.use(express.static('build'));
 app.use('/api/image', imageRouter);
 app.use('/api/redux', reduxRouter);
 app.use('/api/postgres', postgresRouter);
+// app.use('/api/mongo', mongoRouter);
 
 /** ---send postgres connection test to console -- **/
 const client = new Client({
@@ -36,7 +38,7 @@ const client = new Client({
 })
 client
   .connect()
-  .then(() => console.log('database connected....'))
+  .then(() => console.log('postgres database connected....'))
   .catch(err => console.error('connection error', err.stack))
 
 // Upload Endpoint - not needed if moved to routers!

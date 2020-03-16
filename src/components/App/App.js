@@ -5,10 +5,11 @@ import Header from '../Header/Header';
 import FileUpload from '../FileUpload/FileUpload';
 import ImageUpload from '../ImageUpload/ImageUpload';
 import ReduxUpload from '../ReduxUpload/ReduxUpload';
-import PostgresUpload from '../PostgresUpload/PostgresUpload'
+import PostgresUpload from '../PostgresUpload/PostgresUpload';
+import MongoUpload from '../MongoUpload/MongoUpload';
 import ReduxDisplayImages from '../ReduxDisplayImages/ReduxDisplayImages';
 import PostgresDisplayImages from '../PostgresDisplayImages/PostgresDisplayImages';
-
+import MongoDisplayImages from '../MongoDisplayImages/MongoDisplayImages';
 
 
 
@@ -24,8 +25,10 @@ const App = () => (
           <Route path="/imageUpload" component={ImageUpload}/>
           <Route path="/reduxUpload" component={ReduxUpload}/>
           <Route path="/postgresUpload" component={PostgresUpload}/>
+          <Route path="/mongoUpload" component={MongoUpload}/>
           <Route path="/reduxDisplayImages" component={ReduxDisplayImages}/>
           <Route path="/postgresDisplayImages" component={PostgresDisplayImages}/>
+          <Route path="/mongoDisplayImages" component={MongoDisplayImages}/>
         </div>
       </div>
     </Router>
