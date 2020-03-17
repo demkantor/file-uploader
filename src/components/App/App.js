@@ -10,6 +10,7 @@ import MongoUpload from '../MongoUpload/MongoUpload';
 import ReduxDisplayImages from '../ReduxDisplayImages/ReduxDisplayImages';
 import PostgresDisplayImages from '../PostgresDisplayImages/PostgresDisplayImages';
 import MongoDisplayImages from '../MongoDisplayImages/MongoDisplayImages';
+import InfiniteScroll from '../InfiniteScroll/InfiniteScroll';
 
 
 //this is App,js written as a functional component, sill uploading and displaying what we want just written differently
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/reduxUpload" component={ReduxUpload}/>
           <Route path="/postgresUpload" component={PostgresUpload}/>
           <Route path="/mongoUpload" component={MongoUpload}/>
+          <Route path="/infiniteScroll" component={InfiniteScroll}/>
           <Route path="/reduxDisplayImages" component={ReduxDisplayImages}/>
           <Route path="/postgresDisplayImages" component={PostgresDisplayImages}/>
           <Route path="/mongoDisplayImages" component={MongoDisplayImages}/>

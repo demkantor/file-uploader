@@ -21,6 +21,7 @@ class Header extends Component {
                 <Link to="/reduxDisplayImages" className="navLink">Redux Display Images</Link>
                 <Link to="/postgresDisplayImages" className="navLink">Postgres Display Images</Link>
                 <Link to="/mongoDisplayImages" className="navLink">MongoDB Display Images</Link>
+                <Link to="/infiniteScroll" className="navLink">Infinite Scroll</Link>
             </div>
             <div className='container mt-4'>
                 <h4 className='display-4 text-center mb-4'>

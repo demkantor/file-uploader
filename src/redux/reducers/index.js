@@ -6,6 +6,8 @@ import postgressAll from './postgresAllImagesReducer';
 import pgSingle from './pgSingleImageReducer';
 import mongoSingle from './mongoSingleImage';
 import mongoAll from './mongoAllImagesReducer';
+import pager from './infiniteReducer';
+import imgData from './infiniteReducer';
 
 
 
@@ -21,7 +23,9 @@ const rootReducer = combineReducers({
   postgressAll,
   pgSingle,
   mongoSingle,
-  mongoAll
+  mongoAll,
+  pager,
+  imgData
 });
 
 export default rootReducer;
