@@ -16,13 +16,14 @@ class MongoDisplayImages extends Component {
       <div className='container'>
         <h1 className='text-center'>Displays images from MongoDB sent through redux</h1>
         <p className='text-center'>MongoDB stores images more permanently than on server alone</p>
-          {this.props.reduxState.postgressAll && (
+          {this.props.reduxState.mongoAll && (
               <div className="gridContainer">
-                {this.props.reduxState.postgressAll.map(pic => (
-                  <div className="display" key={pic.id}>
-                    <h4>{pic.name}</h4>
-                    <p>{pic.mime_type}</p>
-                    <img className="image" alt={pic.name} src={`data:image/jpeg;base64,${pic.image}`} width="100px"/>
+                {this.props.reduxState.mongoAll.map(pic => (
+                  <div className="display" key={pic._id}>
+                    <h4>{pic.image_name}</h4>
+                    <p>{pic.image_date}</p>
+                    <p>{pic.image_mimetype}</p>
+                    <img className="image" alt={pic.image_name} src={`data:image/jpeg;base64,${pic.image_image.data}`} width="100px"/>
                   </div>
                   ))}
                 </div>

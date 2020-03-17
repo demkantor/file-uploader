@@ -11,12 +11,13 @@ let Image_Upload = new Schema({
     image_mimetype: {
         type: String
     },
-    image_date: {
-         type: Date, default: Date.now 
-    },
     image_image: {
-         data: Buffer
-    }
+         type: Buffer, contentType: String
+    },
+    image_date: {
+        type: Date, default: Date.now 
+   }
 });
+
 
 module.exports = mongoose.model('NewImage', Image_Upload);

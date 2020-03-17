@@ -57,6 +57,15 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/file_uplo
     console.log("MongoDB database connected...");
 })
 
+
+/** ---------- START SERVER ---------- **/
+/** Listen * */
+app.listen(port, () => {
+  console.log(`Listening on port: ${port}`);
+});
+
+
+
 // Upload Endpoint - not needed if moved to routers! ////////
 // app.post('/upload', (req, res) => {
 //   console.log('in /upload/POST');
@@ -76,8 +85,4 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/file_uplo
 
 
 
-/** ---------- START SERVER ---------- **/
-/** Listen * */
-app.listen(port, () => {
-  console.log(`Listening on port: ${port}`);
-});
+

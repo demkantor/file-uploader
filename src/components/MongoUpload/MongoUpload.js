@@ -70,8 +70,8 @@ class MongoUpload extends Component {
                 {this.state.uploadedFile ? (
                     <div className='row mt-5'>
                     <div className='col-md-6 m-auto'>
-                        <h3 className='text-center'>{this.props.reduxState.pgSingle.name}</h3>
-                        <img style={{ width: '100%' }} src={`data:image/jpeg;base64,${this.props.reduxState.pgSingle.image}`} alt={this.props.reduxState.pgSingle.name} />
+                        <h3 className='text-center'>{this.props.reduxState.mongoSingle.image_name}</h3>
+                        <img style={{ width: '100%' }} src={`data:image/jpeg;base64,${this.props.reduxState.mongoSingle.image_image}`} alt={this.props.reduxState.mongoSingle.image_name} />
                     </div>
                     </div>
                 ) : null}
