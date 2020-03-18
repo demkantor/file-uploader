@@ -1,6 +1,6 @@
 import React, { useReducer, useRef } from 'react';
 import { useFetch, useInfiniteScroll, useLazyLoading } from '../../redux/sagas/infiniteSagas'
-
+import '../App/App.css';
 
 
 

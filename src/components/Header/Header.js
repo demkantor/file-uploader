@@ -10,6 +10,7 @@ class Header extends Component {
     render() {
         return (
             <>
+            {/* these are all links to pages in two different navabars */}
             <div className="nav">
                 <Link to="/" className="navLink">Function Component Upload</Link>
                 <Link to="/imageUpload" className="navLink">Class Component Upload</Link>
@@ -22,6 +23,7 @@ class Header extends Component {
                 <Link to="/postgresDisplayImages" className="navLink">Postgres Display Images</Link>
                 <Link to="/mongoDisplayImages" className="navLink">MongoDB Display Images</Link>
                 <Link to="/infiniteScroll" className="navLink">Infinite Scroll</Link>
+                <Link to="/reduxInfinitly" className="navLink">Redux Infinite Scroll</Link>
             </div>
             <div className='container mt-4'>
                 <h4 className='display-4 text-center mb-4'>
